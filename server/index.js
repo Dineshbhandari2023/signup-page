@@ -24,10 +24,14 @@ app.post('/login', (req, res) => {
         if (user) {
             if (user.password === password) {
                 res.json("Login Success!")
+                console.log("Hello");
+                res.redirect("/home")
             } else {
+                console.log("hi");
                 res.json("User already exists!")
             }
         } else {
+            console.log("hi not reg");
             res.json("User is not registered!")
         }
     }) 
